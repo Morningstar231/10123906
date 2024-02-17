@@ -1,0 +1,346 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(to bottom, black, white);
+    background-color: #ffffff;
+    background-blend-mode: multiply;
+    height: 100vh;
+    margin: 0;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    overflow: auto;
+    overflow-x: hidden; /* Untuk menghilangkan scroll horizontal jika konten melebihi lebar */
+  }
+
+  .container {
+    scroll-snap-type: y mandatory; /* Mengaktifkan scroll snapping secara vertikal */
+    overflow-x: hidden; /* Untuk menghilangkan scroll horizontal jika konten melebihi lebar */
+}
+
+.section {
+    scroll-snap-align: start; /* Menentukan bagian mana yang akan di-scroll snap */
+}
+
+
+  
+  .logo img{
+    position: relative;
+    top: 20px;
+    left: 40px;
+    max-width: 70px;
+    filter: invert(100%);
+  }
+  
+  .motor img{
+      position: absolute;
+      top: 160px;
+      width: 450px;
+      left: 800px;
+      height: 400px;
+      filter: brightness(65%);
+  }
+  
+  #menu img{
+    position: fixed;
+    top: 30px;
+    left: 1200px;
+    width: 50px;
+    height: 50px;
+    filter: invert(100%);
+
+  }
+  
+  nav {
+    position: relative;
+    bottom: 70px;
+    font-weight: 500;
+    display: flex;
+    padding: 0;
+    width: 50%;
+    left: 150px;
+  }
+  
+  nav .item {
+    color: #ffffff;
+    font-size: 0.8rem;
+    display: inline-block;
+    position: relative;
+    padding: 0 20px;
+    cursor: pointer;
+    z-index: 1;
+    min-width: 25%;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+  }
+  
+  .dropdown {
+    overflow: hidden;
+    list-style: none;
+    position: absolute;
+    padding: 0;
+    width: 100%;
+    left: 0;
+    top: 62px;
+  }
+  .dropdown > div {
+    transform: translate(0, -100%);
+    transition: all 0.5s 0.1s;
+    position: relative;
+  }
+  
+  .dropdown a {
+    display: block;
+    padding: 0;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 40px;
+    /* background: #000000; */
+  }
+  
+  .dropdown a:hover {
+    background: rgba(196, 199, 43, 0.74)    
+  }
+  
+  .underline {
+    height: 6px;
+    background: var(--color-primary);
+    position: absolute;
+    bottom: 0;
+    width: 25%;
+    z-index: 2;
+    pointer-events: none;
+    transition: 0.35s;
+  }
+  
+  nav .item:hover > .dropdown > div {
+    transform: translate(0);
+  }
+  
+  nav .item:nth-child(1):hover ~ .underline {
+    transform: translate(0, 0);
+  }
+  
+  nav .item:nth-child(2):hover ~ .underline {
+    transform: translate(100%, 0);
+  }
+  
+  nav .item:nth-child(3):hover ~ .underline {
+    transform: translate(200%, 0);
+  }
+  
+  nav .item:nth-child(4):hover ~ .underline {
+    transform: translate(300%, 0);
+  }
+
+  #sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px; /* Menu disembunyikan di luar layar sebelah kanan */
+    width: 300px;
+    height: 100%;
+    background: #333;
+    transition: right 0.3s ease; /* Efek transisi */
+  }
+  
+  #sidebar.open {
+    right: 0; /* Menu ditampilkan di layar sebelah kanan */
+  }
+  
+  #sidebar ul {
+    list-style-type: none; /* Menghapus bullet point dari list */
+    /* padding: 0px; */
+  }
+  
+  #sidebar ul li {
+    padding: 15px;
+    
+  }
+  
+  #sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  #sidebar ul li a:hover {
+    color: #caff0a;
+    text-decoration: none;
+  }
+  
+  #menuToggle {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    width: 50px;
+    height: 50px;
+    filter: invert(100%);
+    transition: right 0.3s ease; /* Efek transisi */
+    cursor: pointer; /* Mengatur kursor menjadi tangan */
+  }
+  
+  #menuToggle img {
+    transition: transform 0.3s ease; /* Efek transisi untuk animasi gambar menu */
+  }
+  
+  #menuToggle.open img {
+    transform: translateX(-280px); /* Menggeser gambar menu ke kiri saat menu terbuka */
+  }
+  
+  
+  
+  .product {
+    position: relative;
+    bottom: 55px;
+    left: 160px;
+  }
+
+  .category {
+    position: relative;
+    bottom: 114px;
+    left: 350px;
+  }
+
+  .shoponline {
+    position: relative;
+    bottom: 172px;
+    left:  700px;
+  }
+
+  .sambutan {
+    position: relative;
+    left: 70px;
+  }
+
+  .sambutan h2 {
+    font-size: 60px;
+  }
+
+  .EFP {
+    position: relative;
+    left: 76px;
+    bottom: 43px;
+  }
+
+  .EFP h3 {
+    font-size: 35px;
+  }
+
+  .information {
+    position: relative;
+    left: 300px;
+    bottom: 290px;
+  }
+
+  .information p {
+    font-size: 33px;
+    justify-content: justify;
+    padding: 20px;
+    max-width: 350px;
+    margin: 0px;
+  }
+
+  .scroll {
+    position: relative;
+    bottom: 280px;
+    left: 150px;
+  }
+
+  .scroll h2 {
+    font-size: 20px;
+    padding: 20px;
+    max-width: 400px;
+    margin: 0px;
+    background-color: #f0f0f0; /* Warna latar belakang */
+    padding: 10px; /* Opsional: menambahkan padding agar teks tidak menempel langsung pada latar belakang */
+    text-align: center; /* Untuk memposisikan teks di tengah */
+    border-radius: 20px; /* Untuk melengkungkan ujung latar belakang */
+    display: inline-block; /* Untuk membuat elemen menjadi inline block */
+    transition: background-color 0.3s ease; /* Animasi transisi warna */
+  }
+
+  .scroll h2:hover {
+    background-color: #333;
+  }
+
+  .car {
+    position: relative;
+    width: 100%; /* Mengatur lebar maksimum sesuai dengan lebar layar */
+    max-width: 1000px; /* Contoh lebar maksimum */
+    margin: 0 auto; /* Menengahkan parent secara horizontal */
+    bottom: 500px;
+  }
+  
+  .car img {
+    width: 100%; /* Mengatur lebar gambar agar tidak melebihi lebar parent */
+    max-width: 100%; /* Batasi lebar gambar agar tidak melebihi lebar parent */
+    height: auto; /* Menjaga aspek rasio gambar */
+  }
+
+  .ready {
+    position: relative;
+    left: 250px;
+    bottom: 150px;
+  }
+  
+  .ready h1 {
+    font-size: 60px;
+  }
+
+  .booking {
+    position: relative;
+    bottom: 850px;
+    left: 250px;
+  }
+
+  .req {
+    position: relative;
+    bottom: 950px;
+    left: 550px;
+  }
+
+  .buy {
+    position: relative;
+    bottom: 900px;
+    left: 890px;
+  }
+
+  .lokation {
+    position: relative;
+    bottom: 800px;
+  }
+
+  /* .lokasi {
+    position: relative;
+    bottom: 500px;
+  } */
+  /* Style untuk center */
+/* center {
+  margin-top: 50px;
+} */
+
+/* Style untuk iframe */
+iframe {
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+/* Efek hover pada iframe */
+iframe:hover {
+  transform: scale(1.05);
+}
+
+/* Style untuk tombol */
+button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Efek hover pada tombol */
+button:hover {
+  background-color: #45a049;
+}
